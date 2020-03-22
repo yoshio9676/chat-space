@@ -1,0 +1,41 @@
+.main_chat
+  .main_header
+    %ul.main_header__left
+      %li.main_header__left__title
+        Group Name
+      %li.main_header__left__member
+        Menber: username
+    .main_header__right
+      = link_to "#",class:"main_header__right__edit" do
+        Edit
+  .chat_main
+    .chat_box
+      %ul.chat_box__top
+        %li.chat_box__top__name
+          UserName1
+        %li.chat_box__top__time
+          2020/03/21
+      .chat_box__comment
+        Good Mornig!!
+    .chat_box
+      %ul.chat_box__top
+        %li.chat_box__top__name
+          UserName11
+        %li.chat_box__top__time
+          2019/03/22
+      .chat_box__comment
+        Good Afternoon!!
+    .chat_box
+      %ul.chat_box__top
+        %li.chat_box__top__name
+          UserName111
+        %li.chat_box__top__time
+          2019/03/23
+      .chat_box__comment
+        Good Night!!
+  .main_footer
+    .form
+      .form__input
+        .form__input__text
+        .form__input__image
+      .form__sent

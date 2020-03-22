@@ -1,0 +1,55 @@
+-# .side_bar
+-#   .side_bar__header
+-#     .side_bar__header__box
+-#       .side_bar__header__box__username
+-#         UserName
+-#       .side_bar__header__box__menu
+-#         %ul.side_bar__header__box__menu__btns
+-#           %li.side_bar__header__box__menu__btns__list
+-#           =link_to "#", class:"side_bar__header__box__menu__btns__btn" do
+-#             =icon('far', 'fa-edit',class: 'side_bar__header__box__menu__btns__btn--icon')
+-#           %li.side_bar__header__box__menu__btns__list
+-#           =link_to "#", class: "side_bar__header__box__menu__btns__btn" do
+-#             =icon('fas', 'fa-cog',class: 'side_bar__header__box__menu__btns__btn--icon')
+-#   .side_bar__main
+-#     .side_bar__main__box
+-#       %ul.side_bar__main___box__group
+-#         %li.side_bar__main___box__group__display.side_bar__main___box__group__display--name
+-#           techchamp
+-#         %li.side_bar__main___box__group__display.side_bar__main___box__group__display--message
+-#           まだメッセージがありません
+
+
+.side_bar
+  .side_header
+    .side_header_box
+      .side_header_box__username
+        UserName
+      %ul.side_header_box__menu
+        %li.side_header_box__menu__new
+        = link_to "#" do
+          = icon('far', 'fa-edit',class: 'side_header_box__menu__list--icon')
+        %li.side_header_box__menu__edit
+        = link_to "#" do
+          = icon('fas', 'fa-cog',class: 'side_header_box__menu__list--icon')
+  .side_main
+    .side_main_box
+      .side_main_box__group-name
+        techchamp
+      .side_main_box__group-message
+        まだメッセージがありません
+    .side_main_box
+      .side_main_box__group-name
+        techchamp
+      .side_main_box__group-message
+        まだメッセージがありません
+    .side_main_box
+      .side_main_box__group-name
+        techchamp
+      .side_main_box__group-message
+        まだメッセージがありません
+    .side_main_box
+      .side_main_box__group-name
+        techchamp
+      .side_main_box__group-message
+        まだメッセージがありません
