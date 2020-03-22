@@ -15,14 +15,13 @@ li{
 }
 
 // SIDE BOX
-// side header
-
 .side_bar{
   background-color: #253141;
   height: 100vh;
   width: 300px;
 }
 
+// side header
 .side_header{
   height: 100px;
   display: flex;
@@ -31,28 +30,23 @@ li{
 }
 
 .side_header_box{
-  height: 20px;
-  width: 260px;
+  line-height: 20px;
+  width: 100%;
   display: flex;
   justify-content: space-between;
   &__username{
-    height: 100%;
-    width: 60px;
+    // height: 100%;
     color: #ffffff;
     font-size: 16px;
     font-weight: bold;
   }
   &__menu{
     height: 100%;
-    width: 60px;
     display: flex;
-    li{
+    &__icon{
       margin-left: 5px;
-      width: 50%;
-      a{
-        color: #ffffff;
-        display: inline-block;
-      }
+      color: #ffffff;
+      display: inline-block;
     }
   }
 }
@@ -65,7 +59,7 @@ li{
 
 .side_main_box{
   width: 100%;
-  padding: 20px 20px 20px 40px;
+  padding: 20px 20px 40px 20px;
   &__group-name{
     font-size: 15px;
     color: #ffffff;
@@ -164,12 +158,30 @@ li{
   height: 50px;
   &__input{
     width: 100%;
-    background-color: #ffffff;
     margin-right: 15px;
-    padding: 0 10px;
+    display: flex;
+    position: relative;
+    &__text{
+      display: inline-block;
+      height: 100%;
+      width: 100%;
+      padding: 0 40px 0 10px;
+    }
+    &__image{
+      font-size: 25px;
+      position: absolute;
+      top: 10px;
+      right: 10px;
+    }
   }
   &__sent{
     width: 100px;
-    background-color: yellow;
+    height: 50px;
+    color: #ffffff;
+    background-color: #38aef0;
   }
+}
+
+.file-choice{
+  display: none;
 }

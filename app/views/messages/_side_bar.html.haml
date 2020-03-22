@@ -23,15 +23,13 @@
 .side_bar
   .side_header
     .side_header_box
-      .side_header_box__username
+      %p.side_header_box__username
         UserName
-      %ul.side_header_box__menu
-        %li.side_header_box__menu__new
-        = link_to "#" do
-          = icon('far', 'fa-edit',class: 'side_header_box__menu__list--icon')
-        %li.side_header_box__menu__edit
-        = link_to "#" do
-          = icon('fas', 'fa-cog',class: 'side_header_box__menu__list--icon')
+      .side_header_box__menu
+        = link_to "#", class: "side_header_box__menu__icon" do
+          = icon('far', 'edit',class: 'side_header_box__menu__icon--right')
+        = link_to "#", class: "side_header_box__menu__icon" do
+          = icon('fas', 'cog',class: 'side_header_box__menu__list__icon--right')
   .side_main
     .side_main_box
       .side_main_box__group-name
