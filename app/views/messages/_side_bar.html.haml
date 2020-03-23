@@ -10,23 +10,16 @@
         = link_to edit_user_path(current_user), class: "side_header_box__menu__icon" do
           = icon('fas', 'cog',class: 'side_header_box__menu__list__icon--right')
   .side_main
-    .side_main_box
-      .side_main_box__group-name
-        techchamp
-      .side_main_box__group-message
-        まだメッセージがありません
-    .side_main_box
-      .side_main_box__group-name
-        techchamp
-      .side_main_box__group-message
-        まだメッセージがありません
-    .side_main_box
-      .side_main_box__group-name
-        techchamp
-      .side_main_box__group-message
-        まだメッセージがありません
-    .side_main_box
-      .side_main_box__group-name
-        techchamp
-      .side_main_box__group-message
-        まだメッセージがありません
+    - current_user.groups.each do |group|
+      .side_main_box
+        = link_to '#' do
+          .side_main_box__group-name
+            = group.name
+          .side_main_box__group-message
+            messageはまだありません
+    -# .side_main_box
+    -#   .side_main_box__group-name
+    -#     techchamp
+    -#   .side_main_box__group-message
+    -#     まだメッセージがありません
+    
