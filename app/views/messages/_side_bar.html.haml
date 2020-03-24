@@ -12,11 +12,11 @@
   .side_main
     - current_user.groups.each do |group|
       .side_main_box
-        = link_to '#' do
+        = link_to group_messages_path(group) do
           .side_main_box__group-name
             = group.name
           .side_main_box__group-message
-            messageはまだありません
+            = group.show_last_message
     -# .side_main_box
     -#   .side_main_box__group-name
     -#     techchamp

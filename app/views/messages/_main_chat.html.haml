@@ -2,42 +2,33 @@
   .main_header
     %ul.main_header__left
       %li.main_header__left__title
-        Group Name
+        = @group.name
       %li.main_header__left__member
-        Menber: username
+        Menber: 
+        - if @group.users
+          - @group.users.each do |user|
+            = user.name
     .main_header__right
-      = link_to "#",class:"main_header__right__edit" do
+      = link_to edit_group_path(@group),class:"main_header__right__edit" do
         Edit
   .chat_main
-    .chat_box
-      %ul.chat_box__top
-        %li.chat_box__top__name
-          UserName1
-        %li.chat_box__top__time
-          2020/03/21
-      .chat_box__comment
-        Good Mornig!!
-    .chat_box
-      %ul.chat_box__top
-        %li.chat_box__top__name
-          UserName11
-        %li.chat_box__top__time
-          2019/03/22
-      .chat_box__comment
-        Good Afternoon!!
-    .chat_box
-      %ul.chat_box__top
-        %li.chat_box__top__name
-          UserName111
-        %li.chat_box__top__time
-          2019/03/23
-      .chat_box__comment
-        Good Night!!
+    = render @messages
+    -# .chat_box
+    -#   %ul.chat_box__top
+    -#     %li.chat_box__top__name
+    -#       UserName1
+    -#     %li.chat_box__top__time
+    -#       2020/03/21
+    -#   .chat_box__comment
+    -#     Good Mornig!!
+
+
+
   .main_footer
-    .form
+    = form_for [@group, @message] do |f|
       .form__input
-        %input.form__input__text{type: "text", placeholder: "type a message"}
-        %label.form__input__image
-          = icon('fas', 'image')
-          %input.file-choice{type: "file"}
-      %input.form__sent{type: "submit", value: "Sent"}
+        = f.text_field :content, class: 'form__input__text', placeholder: 'type a message'
+        = f.label :image, class: 'form__input__image' do
+          = icon('fas', 'image', class: 'icon')
+          = f.file_field :image, class: 'hidden'
+      = f.submit 'Send', class: 'form__sent'
