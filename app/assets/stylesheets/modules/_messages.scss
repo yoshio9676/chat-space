@@ -120,6 +120,11 @@ li{
   background-color: #fafafa;
 }
 
+.messages {
+  height: 100%;
+  overflow: scroll;
+}
+
 .chat_box{
   &__top{
     display: flex;
@@ -144,6 +149,7 @@ li{
       margin-bottom: 46px;
     }
     &__image{
+      width: 300px;
     }
   }
 }
