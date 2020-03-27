@@ -12,29 +12,29 @@ $(function() {
     var html_content = `<p class="lower-message__content .chat_box__content__comment">
                           ${message.content}
                         </p>`
-    var html_image = `<img src="` + message.image + `" class="lower-message__image chat_box__content__image" >`
+    var html_image = `<img src="${message.image}" class="lower-message__image chat_box__content__image" >`
 
     if (message.content && message.image) {
-      var html = `<div class="chat_box" data-message-id=${message.id} >` +
-                    html_name + 
-                    `<div class="lower-message chat_box__content">` +
-                      html_content +
-                      html_image +
-                    `</div>
+      var html = `<div class="chat_box" data-message-id=${message.id} >
+                    ${html_name}
+                    <div class="lower-message chat_box__content">
+                      ${html_content}
+                      ${html_image}
+                    </div>
                   </div>`
     } else if (message.content) {
-      var html = `<div class="chat_box" data-message-id=${message.id} >` +
-                    html_name + 
-                    `<div class="lower-message chat_box__content">` +
-                      html_content +
-                    `</div>
+      var html = `<div class="chat_box" data-message-id=${message.id} >
+                    ${html_name}
+                    <div class="lower-message chat_box__content">
+                      ${html_content}
+                    </div>
                   </div>`
     } else if (message.image) {
-      var html = `<div class="chat_box" data-message-id=${message.id} >` +
-                    html_name + 
-                    `<div class="lower-message chat_box__content">` +
-                      html_image +
-                    `</div>
+      var html = `<div class="chat_box" data-message-id=${message.id} >
+                    ${html_name}
+                    <div class="lower-message chat_box__content">
+                      ${html_image}
+                    </div>
                   </div>`
     };
   return html;
@@ -49,7 +49,6 @@ $(function() {
       data: {id: last_message_id}
     })
       .done(function(messages) {
-        console.log(messages)
         if (messages.length !== 0) {
           var insertHTML = '';
           $.each(messages, function(i, message) {
@@ -92,48 +91,5 @@ $(function() {
     setInterval(reloadMessages, 7000);
   }
 });
-
-
-
-
-
-// function buildHTML(message){
-//   if ( message.image ) {
-//     var html = `<div class="chat_box">
-//                   <div class="chat_box__top">
-//                     <div class="chat_box__top__name">
-//                       ${message.user_name}
-//                     </div>
-//                     <div class="chat_box__top__date">
-//                       ${message.created_at}
-//                     </div>
-//                   </div>
-//                   <div class="chat_box__content">
-//                     <p class="chat_box__content__comment">
-//                       ${message.content}
-//                     </p>
-//                     <img src=${message.image} >
-//                   </div>
-//                 </div>`
-//     return html;
-//   }else {
-//     var html = `<div class="chat_box">
-//                   <div class="chat_box__top">
-//                     <div class="chat_box__top__name">
-//                       ${message.user_name}
-//                     </div>
-//                     <div class="chat_box__top__date">
-//                       ${message.created_at}
-//                     </div>
-//                   </div>
-//                   <div class="chat_box__content">
-//                     <p class="chat_box__content__comment">
-//                       ${message.content}
-//                     </p>
-//                   </div>
-//                 </div>`
-//     return html;
-//   };
-// }
 
 
