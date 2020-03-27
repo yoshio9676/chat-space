@@ -126,6 +126,7 @@ li{
 }
 
 .chat_box{
+  margin-bottom: 46px;
   &__top{
     display: flex;
     margin-bottom: 12px;
@@ -146,7 +147,6 @@ li{
       color: #434a54;
       font-size: 14px;
       line-height: 14px;
-      margin-bottom: 46px;
     }
     &__image{
       width: 300px;
